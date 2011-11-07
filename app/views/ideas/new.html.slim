@@ -1,0 +1,18 @@
+h1 Nos informe a sua ideia
+
+=form_for @idea do |f|
+  p
+    =f.label "Titulo da ideia"
+    =f.text_field :name, :name => "name"
+  br
+  p
+    =f.label "Seu nome"
+    =f.text_field :author, :name => "author"
+  br
+  p
+    =f.label "Descreva a ideia"
+  p
+    =f.text_area :description, :name => "description"
+  br
+  p
+    =f.submit "Enviar a ideia", :name => "send"

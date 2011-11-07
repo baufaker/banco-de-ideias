@@ -1,4 +1,15 @@
 BancoDeIdeias::Application.routes.draw do
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  
+  resources :ideas #cria as rotas de todas as ações do controller automaticamente
+  
+  # match '/new' => "ideas#new", :as => :new
+  
+  root :to => "ideas#new"
+  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
